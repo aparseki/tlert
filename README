@@ -1,1 +1,16 @@
 # time lapse processing codes
+
+Not sure if all scripts are needed anymore...
+
+The scripts are currently only setup for input of MPT DAS1 data that have 100% reciprocals.
+
+Needs to have in the same directory as these scripts:
+1) a folder called "R2files" that contains the R2 input files: one for the first inversion and one for each of the TL datsets
+2) a "raw_data" folder that contains all raw ERT data
+3) a "results" folder (can be empty to start off with)
+4) a "figures" folder (can be empty to start off wtih)
+5) a copy of R2.exe (http://www.es.lancs.ac.uk/people/amb/Freeware/R2/R2.htm). Currently working for R2 v3.0 and greater
+6) the mesh file (see R2 documentation and scripts provided by Binley)
+7) the elevation/topography file used to build the mesh
+
+Might need other things... not designed to be a plug-and-play solution. It will take troubleshooting to set it up for your own purposes. 
