@@ -1,3 +1,5 @@
+function meshwrite(wkdir,topog,outname,FrgDiscD,cLengthMult)
+
 %% MESH DESIGN [meshwrite.m]
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 %
@@ -35,12 +37,12 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 %% <> FILE LOCATION AND OUTPUT NAME
-wkdir = ''; % set your working directory; blank will use whatever directory this script is in
-topog = 'dcew_temp_elev.txt'; % input the filename for "SURVEY INPUT" (see below)
-outname = 'dcew'; % chose an output name for the *.geo file.
+%wkdir = ''; % set your working directory; blank will use whatever directory this script is in
+%topog = 'dcew_temp_elev.txt'; % input the filename for "SURVEY INPUT" (see below)
+%outname = 'dcew'; % chose an output name for the *.geo file.
 %% <> MESH SIZE AND GEOMETRY PARAMS
 FrgDisc = 4; %distance that foreground discritization extends [normally do not change]
-FrgDiscD = 20; % foreground discritization depth
+%FrgDiscD = 20; % foreground discritization depth
 MaxD = 200; %max surface distance
 MaxDepth = 200; % max Neuman depth, to be added to FrgDiscD
 
@@ -56,7 +58,7 @@ MaxDepth = 200; % max Neuman depth, to be added to FrgDiscD
 
 sf = load([wkdir topog]); %survey file
 [elx,~] = size(sf);
-CharLen = (sf(2,1)-sf(1,1))*.8;  %decrease the multiplier for finer mesh cells
+CharLen = (sf(2,1)-sf(1,1))*cLengthMult;  %decrease the multiplier for finer mesh cells
 
 %% START WRITING FILE
 % A header
