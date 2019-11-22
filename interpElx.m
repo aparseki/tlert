@@ -1,6 +1,6 @@
 function done = interpElx(x,z,inc,int,numelx)
-% interpElx: takes electrode posistion in x-z space at small spacing (e.g.,
-% from LiDAR) and interpolates to make them at the desired electrode
+% interpElx: takes electrode posistion in x-z space at smaller or larger 
+% spacing and interpolates to make them at the desired electrode
 % spacing.  input must be in x-z space, NOT along-the-line-distance space.
 % The inputs do NOT need to be evenly spaced in the x-direction.
 %
@@ -47,7 +47,8 @@ end
 done = [0 z(1); done]; % the zero point had been skipped, so add that back in
 
 subplot(1,2,1)
-plot(done(:,1),done(:,2),'+r')
+plot(done(:,1),done(:,2),'+r'); hold on
+plot(x,z,'ok')
 
 for i = 1:length(done)-1  % just check the interpolation
     A2 = (done(i,1)-done(i+1,1))^2;
