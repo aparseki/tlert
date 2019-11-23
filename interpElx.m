@@ -3,6 +3,7 @@ function done = interpElx(x,z,inc,int,numelx)
 % spacing and interpolates to make them at the desired electrode
 % spacing.  input must be in x-z space, NOT along-the-line-distance space.
 % The inputs do NOT need to be evenly spaced in the x-direction.
+% Appropriate for LiDAR extracted positions or sparse GPS measurements
 %
 % x = map-view distance along the line
 % z = elevation
